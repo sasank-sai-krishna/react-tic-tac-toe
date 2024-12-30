@@ -1,38 +1,189 @@
-.App {
-  text-align: center;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #000;
+  color: #fff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.main {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 100vh;
 }
 
-.App-link {
-  color: #61dafb;
+.heading {
+  font-size: 3rem;
+  color: cyan;
+  text-shadow: 0 0 10px cyan, 0 0 20px cyan;
+  margin-bottom: 20px;
+  text-align: center;
+  padding-left: 11rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.game {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px; /* Added space between the input section and the game board */
+  flex-wrap: wrap;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centered input fields */
+  gap: 10px;
+  margin-right: 20px; /* Added margin to create space between the inputs and board */
+}
+
+.sidebar input {
+  padding: 10px;
+  font-size: 1rem;
+  width: 100%;
+  margin-top: 5px;
+}
+
+.start-button {
+  padding: 10px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: cyan;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+  width: 100%; /* Ensures the button spans the width of the input field */
+  margin-top: 20px; /* Adds space above the button */
+}
+
+.start-button:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.board-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+  justify-content: center;
+  width: 315px;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: #1a1919;
+  color: #fff;
+  border: 2px solid red;
+  text-align: center;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  text-shadow: 0 0 10px #fff;
+  transition: transform 0.2s;
+}
+
+.box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px cyan;
+}
+
+.result-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+#turn {
+  font-size: 1.5rem;
+  color: lime;
+  text-shadow: 0 0 10px lime;
+  padding-top: 8rem;
+}
+
+#result {
+  font-size: 1.5rem;
+  color: yellow;
+  text-shadow: 0 0 10px yellow;
+}
+
+.restart-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: cyan;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 20px; /* Adds space between the board and the restart button */
+}
+
+.restart-button:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .game {
+    flex-direction: column;
+    align-items: center;
   }
-  to {
-    transform: rotate(360deg);
+
+  .sidebar {
+    align-items: center;
+    width: 100%;
+  }
+
+  .start-button {
+    width: auto;
+  }
+
+  .board-container {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .heading {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heading {
+    font-size: 1.8rem;
+  }
+
+  .container {
+    gap: 3px;
+  }
+
+  .box {
+    font-size: 1.2rem;
+  }
+
+  .restart-button,
+  .start-button {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+  }
+
+  #turn,
+  #result {
+    font-size: 1rem;
   }
 }
