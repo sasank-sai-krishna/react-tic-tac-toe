@@ -27,16 +27,16 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
-  gap: 40px; /* Added space between the input section and the game board */
+  gap: 40px; 
   flex-wrap: wrap;
 }
 
 .sidebar {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centered input fields */
+  align-items: center; 
   gap: 10px;
-  margin-right: 20px; /* Added margin to create space between the inputs and board */
+  margin-right: 20px; 
 }
 
 .sidebar input {
@@ -55,8 +55,8 @@ body {
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.3s;
-  width: 100%; /* Ensures the button spans the width of the input field */
-  margin-top: 20px; /* Adds space above the button */
+  width: 100%; 
+  margin-top: 20px; 
 }
 
 .start-button:hover {
@@ -129,7 +129,7 @@ body {
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.3s;
-  margin-top: 20px; /* Adds space between the board and the restart button */
+  margin-top: 20px; 
 }
 
 .restart-button:hover {
@@ -137,7 +137,6 @@ body {
   color: #000;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .game {
     flex-direction: column;
